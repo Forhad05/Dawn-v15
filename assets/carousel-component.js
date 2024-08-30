@@ -6,7 +6,13 @@ if(!customElements.get('carousel-component')) {
       constructor() {
         super();
         this.sliderControlWrapper = this.querySelector('.slider-buttons');
-        this.enableSliderLooping = true;
+        this.enableSliderLooping = false;
+        
+        if (!this.slider || !this.nextButton) return;
+
+        this.initPages();
+        const resizeObserver = new ResizeObserver((entries) => this.initPages());
+        resizeObserver.observe(this.slider);
     
         if (!this.sliderControlWrapper) return;
         this.sliderFirstItemNode = this.slider.querySelector('.carousel__slide');
@@ -50,16 +56,6 @@ if(!customElements.get('carousel-component')) {
         super.update();
         this.carouselSliderItems = this.querySelectorAll('.carousel__slide');
         this.sliderControlButtons = this.querySelectorAll('.slider-counter__link');
-        this.prevButton.removeAttribute('disabled');
-    
-        if (!this.sliderControlButtons.length) return;
-    
-        this.sliderControlButtons.forEach((link) => {
-          link.classList.remove('slider-counter__link--active');
-          link.removeAttribute('aria-current');
-        });
-        this.sliderControlButtons[this.currentPage - 1].classList.add('slider-counter__link--active');
-        this.sliderControlButtons[this.currentPage - 1].setAttribute('aria-current', true);
     
         if (this.isSlideVisible(this.sliderItemsToShow[0]) && this.slider.scrollLeft === 0) {
           this.prevButton.setAttribute('disabled', 'disabled');
@@ -69,6 +65,7 @@ if(!customElements.get('carousel-component')) {
     
         if (this.isSlideVisible(this.sliderItemsToShow[this.sliderItemsToShow.length - 1])) {
           this.nextButton.setAttribute('disabled', 'disabled');
+          if (!this.sliderControlButtons.length) return;
           if(this.sliderControlButtons[this.sliderControlButtons.length - 1] != this.querySelector('.slider-counter__link[aria-current="true"]')) 
             setTimeout(() => {
               this.slider.scrollTo({ left: this.sliderFirstItemNode.offsetLeft})
@@ -76,6 +73,15 @@ if(!customElements.get('carousel-component')) {
         } else {
           this.nextButton.removeAttribute('disabled');
         }
+    
+        if (!this.sliderControlButtons.length) return;
+    
+        this.sliderControlButtons.forEach((link) => {
+          link.classList.remove('slider-counter__link--active');
+          link.removeAttribute('aria-current');
+        });
+        this.sliderControlButtons[this.currentPage - 1].classList.add('slider-counter__link--active');
+        this.sliderControlButtons[this.currentPage - 1].setAttribute('aria-current', true);
       }
     
       isSlideVisible(element, offset = 0) {

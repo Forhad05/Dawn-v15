@@ -176,7 +176,6 @@
               <span class="slider-counter--total">{{ section.blocks.size }}</span>
             {%- else -%}
               {% assign inactive_columns_desktop = section.settings.columns_desktop | minus: 1 %}
-              {% assign limit_dots = section.blocks.size | minus: inactive_columns_desktop %}
               <div class="slideshow__control-wrapper">
                 {%- for block in section.blocks -%}
                   <button
