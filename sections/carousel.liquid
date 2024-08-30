@@ -1,5 +1,6 @@
 {{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'carousel-component.js' | asset_url }}" defer="defer"></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -41,7 +42,7 @@
     {% endif %}
   >
     {%- unless section.settings.title == blank -%}
-      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
+      <div class="title-wrapper-with-link title-wrapper--no-top-margin multicolumn__title">
         <h2 class="title inline-richtext {{ section.settings.heading_size }}">
           {{ section.settings.title }}
         </h2>
@@ -54,7 +55,7 @@
     {%- endunless -%}
     <carousel-component class="slider-mobile-gutter">
       <div
-        class="multicolumn-list contains-content-container grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
+        class="multicolumn-list contains-content-container grid grid--1-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
         data-speed="{{ section.settings.change_slides_speed }}"
         data-autoplay="{{ section.settings.auto_rotate }}"
         id="Slider-{{ section.id }}"
@@ -177,9 +178,9 @@
               {% assign inactive_columns_desktop = section.settings.columns_desktop | minus: 1 %}
               {% assign limit_dots = section.blocks.size | minus: inactive_columns_desktop %}
               <div class="slideshow__control-wrapper">
-                {%- for block in section.blocks limit: limit_dots -%}
+                {%- for block in section.blocks -%}
                   <button
-                    class="slider-counter__link slider-counter__link--{{ section.settings.slider_visual }} link"
+                    class="slider-counter__link slider-counter__link--{{ section.settings.slider_visual }} link{% if forloop.index > inactive_columns_desktop %} large-up-hide{% endif %}"
                     aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
                     aria-controls="Slider-{{ section.id }}"
                   >
@@ -202,6 +203,16 @@
           >
             {% render 'icon-caret' %}
           </button>
+          {%- if section.settings.auto_rotate -%}
+            <button
+              type="button"
+              class="slideshow__autoplay slider-button{% if section.settings.auto_rotate == false %} slideshow__autoplay--paused{% endif %} hidden"
+              aria-label="{{ 'sections.slideshow.pause_slideshow' | t }}"
+            >
+              {%- render 'icon-pause' -%}
+              {%- render 'icon-play' -%}
+            </button>
+          {%- endif -%}
         </div>
       {%- endif -%}
     </carousel-component>
@@ -392,6 +403,12 @@
       ],
       "default": "counter",
       "label": "t:sections.slideshow.settings.slider_visual.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "t:sections.slideshow.settings.auto_rotate.label",
+      "default": false
     },
     {
       "type": "range",
