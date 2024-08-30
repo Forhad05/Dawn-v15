@@ -65,8 +65,7 @@ if(!customElements.get('carousel-component')) {
     
         if (this.isSlideVisible(this.sliderItemsToShow[this.sliderItemsToShow.length - 1])) {
           this.nextButton.setAttribute('disabled', 'disabled');
-          if (!this.sliderControlButtons.length) return;
-          if(this.sliderControlButtons[this.sliderControlButtons.length - 1] != this.querySelector('.slider-counter__link[aria-current="true"]')) 
+          if(this.sliderControlButtons.length && this.sliderControlButtons[this.sliderControlButtons.length - 1] != this.querySelector('.slider-counter__link[aria-current="true"]') && this.slider.getAttribute('data-autoplay') === 'true') 
             setTimeout(() => {
               this.slider.scrollTo({ left: this.sliderFirstItemNode.offsetLeft})
             }, this.autoplaySpeed);
@@ -172,8 +171,6 @@ if(!customElements.get('carousel-component')) {
     
       linkToSlide(event) {
         event.preventDefault();
-        console.log(this.currentPage);
-        console.log(event.currentTarget);
         const slideScrollPosition = this.slider.scrollLeft + this.sliderFirstItemNode.clientWidth * (this.sliderControlLinksArray.indexOf(event.currentTarget) + 1 - this.currentPage);
         this.slider.scrollTo({
           left: slideScrollPosition,

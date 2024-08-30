@@ -168,7 +168,7 @@
           >
             {% render 'icon-caret' %}
           </button>
-          <div class="slider-counter slider-counter--{{ section.settings.slider_visual }}{% if section.settings.slider_visual == 'counter' or section.settings.slider_visual == 'numbers' %} caption{% endif %}">
+          <div class="slider-counter slider-counter--{% if section.settings.slider_visual == 'horizontals' %}dots{% else %}{{ section.settings.slider_visual }}{% endif %}{% if section.settings.slider_visual == 'counter' or section.settings.slider_visual == 'numbers' %} caption{% endif %}">
             {%- if section.settings.slider_visual == 'counter' -%}
               <span class="slider-counter--current">1</span>
               <span aria-hidden="true"> / </span>
@@ -179,14 +179,14 @@
               <div class="slideshow__control-wrapper">
                 {%- for block in section.blocks -%}
                   <button
-                    class="slider-counter__link slider-counter__link--{{ section.settings.slider_visual }} link{% if forloop.index > inactive_columns_desktop %} large-up-hide{% endif %}"
+                    class="slider-counter__link slider-counter__link--{% if section.settings.slider_visual == 'horizontals' %}dots isolate{% else %}{{ section.settings.slider_visual }}{% endif %} link{% if section.settings.slider_visual == 'horizontals' %} isolate slider-counter__link--dots-horizontal{% endif %}{% if forloop.index > inactive_columns_desktop %} large-up-hide{% endif %}"
                     aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
                     aria-controls="Slider-{{ section.id }}"
                   >
                     {%- if section.settings.slider_visual == 'numbers' -%}
                       {{ forloop.index -}}
                     {%- else -%}
-                      <span class="dot"></span>
+                      <span class="dot{% if section.settings.slider_visual == 'horizontals' %} dot-horizontal{% endif %}"></span>
                     {%- endif -%}
                   </button>
                 {%- endfor -%}
@@ -387,6 +387,10 @@
       "type": "select",
       "id": "slider_visual",
       "options": [
+        {
+          "value": "horizontals",
+          "label": "Horizontals"
+        },
         {
           "value": "dots",
           "label": "t:sections.slideshow.settings.slider_visual.options__2.label"
