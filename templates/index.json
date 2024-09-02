@@ -87,7 +87,7 @@
         "column_D68cQV": {
           "type": "column",
           "settings": {
-            "title": "Column",
+            "title": "Column 1",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
@@ -96,7 +96,7 @@
         "column_mqQPKd": {
           "type": "column",
           "settings": {
-            "title": "Column",
+            "title": "Column 2",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
@@ -105,7 +105,34 @@
         "column_77QxtY": {
           "type": "column",
           "settings": {
-            "title": "Column",
+            "title": "Column 3",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_fXDFcP": {
+          "type": "column",
+          "settings": {
+            "title": "Column 4",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Wdq6j8": {
+          "type": "column",
+          "settings": {
+            "title": "Column 5",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_PLTypm": {
+          "type": "column",
+          "settings": {
+            "title": "Column 6",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
@@ -115,21 +142,28 @@
       "block_order": [
         "column_D68cQV",
         "column_mqQPKd",
-        "column_77QxtY"
+        "column_77QxtY",
+        "column_fXDFcP",
+        "column_Wdq6j8",
+        "column_PLTypm"
       ],
       "settings": {
         "title": "Carousel",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "full_width": true,
         "column_alignment": "left",
         "background_style": "primary",
         "button_label": "Button label",
         "button_link": "",
+        "enable_desktop_slider": true,
+        "slider_visual": "horizontals",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
         "color_scheme": "",
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
