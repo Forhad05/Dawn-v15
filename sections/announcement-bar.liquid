@@ -42,6 +42,9 @@
           {%- endif -%}
           <p class="announcement-bar__message h5">
             <span>{{ section.blocks.first.settings.text | escape }}</span>
+            {%- if block.settings.link != blank and block.settings.remove_icon == false -%}
+              {% render 'icon-arrow' %}
+            {%- endif -%}
           </p>
           {%- if section.blocks.first.settings.link != blank -%}
             </a>
@@ -98,6 +101,9 @@
                     {%- endif -%}
                     <p class="announcement-bar__message h5">
                       <span>{{ block.settings.text | escape }}</span>
+                      {%- if block.settings.link != blank and block.settings.remove_icon == false -%}
+                        {% render 'icon-arrow' %}
+                      {%- endif -%}
                     </p>
                     {%- if block.settings.link != blank -%}
                       </a>
@@ -244,6 +250,12 @@
           "type": "url",
           "id": "link",
           "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "remove_icon",
+          "label": "Remove '->' in Text Link",
+          "default": false
         }
       ]
     }
