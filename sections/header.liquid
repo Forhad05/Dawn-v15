@@ -70,6 +70,21 @@
       padding-top: 0.5rem;
     }
   }
+  /* header menu */
+  header-menu > details > summary {
+    position: relative;
+  }
+  header-menu summary > .link--overlay:empty {
+    display: block;
+  }
+  header-menu summary > .link--overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
 </style>
 
 {%- style -%}
@@ -303,6 +318,23 @@
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
 {%- endif -%}
 
+{% if section.settings.nav_open_hover %}
+  <script>
+    let items = document.querySelector(".header__inline-menu").querySelectorAll("details");
+
+    items.forEach(item => {
+      item.addEventListener("mouseover", () => {
+        item.setAttribute("open", true);
+        item.querySelector("ul").addEventListener("mouseleave", () => {
+          item.removeAttribute("open");
+        });
+        item.addEventListener("mouseleave", () => {
+          item.removeAttribute("open");
+        });
+      });
+    });
+  </script>
+{% endif %}
 {% javascript %}
   class StickyHeader extends HTMLElement {
     constructor() {
@@ -547,6 +579,12 @@
       "type": "checkbox",
       "id": "enable_search",
       "label": "Display/Hide Search",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "nav_open_hover",
+      "label": "Desktop Nav replace Hover with Click",
       "default": true
     },
     {

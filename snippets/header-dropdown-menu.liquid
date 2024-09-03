@@ -24,6 +24,9 @@
                   {{- link.title | escape -}}
                 </span>
                 {% render 'icon-caret' %}
+                {% if section.settings.nav_open_hover %}
+                  <a href="{{ link.url }}" class="link--overlay"></a>
+                {% endif %}
               </summary>
               <ul
                 id="HeaderMenu-MenuList-{{ forloop.index }}"
