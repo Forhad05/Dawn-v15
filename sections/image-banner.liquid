@@ -25,6 +25,9 @@
 
 {%- style -%}
   #Banner-{{ section.id }}::after {
+    {% if section.settings.image == blank %}
+    background: {{ section.settings.color_background }};
+    {% endif %}
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
 {%- endstyle -%}
@@ -186,6 +189,12 @@
       "label": "t:sections.image-banner.settings.image_2.label"
     },
     {
+      "type": "color",
+      "id": "color_background",
+      "label": "Color background if No Image",
+      "default": "transparent"
+    },
+    {
       "type": "range",
       "id": "image_overlay_opacity",
       "min": 0,
@@ -193,7 +202,7 @@
       "step": 10,
       "unit": "%",
       "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
-      "default": 0
+      "default": 20
     },
     {
       "type": "select",
