@@ -1,5 +1,53 @@
 {
   "sections": {
+    "image_banner_bTAxkq": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_FABPjC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_zBMwzA": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_CXDjhk": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_FABPjC",
+        "text_zBMwzA",
+        "buttons_CXDjhk"
+      ],
+      "settings": {
+        "color_background": "rgba(0,0,0,0)",
+        "image_overlay_opacity": 20,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "slideshow_jNBkCL": {
       "type": "slideshow",
       "blocks": {
@@ -42,6 +90,7 @@
         "slide_hBxx6n",
         "slide_j6yfY4"
       ],
+      "disabled": true,
       "settings": {
         "layout": "full_bleed",
         "slide_height": "medium",
@@ -254,6 +303,7 @@
     }
   },
   "order": [
+    "image_banner_bTAxkq",
     "slideshow_jNBkCL",
     "featured_collection",
     "carousel_f4Dq8m",
