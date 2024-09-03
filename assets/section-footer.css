@@ -508,3 +508,12 @@
     }
   }
 }
+
+/* custom styles */
+.footer__content-bottom-wrapper--left {
+  justify-content: start;
+}
+
+.footer__content-bottom-wrapper--right {
+  justify-content: end;
+}
