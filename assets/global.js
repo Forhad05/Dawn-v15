@@ -692,9 +692,25 @@ customElements.define('modal-opener', ModalOpener);
 class DeferredMedia extends HTMLElement {
   constructor() {
     super();
+    this.enableAutoPlay = this.dataset.autoplay === 'true';
     const poster = this.querySelector('[id^="Deferred-Poster-"]');
-    if (!poster) return;
-    poster.addEventListener('click', this.loadContent.bind(this));
+    if(this.enableAutoPlay) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+            this.loadContent();
+            observer.unobserve(this);
+          }
+        });
+      }, {
+        threshold: 0.5
+      });
+      
+      observer.observe(this);
+    } else {
+      if (!poster) return;
+      poster.addEventListener('click', this.loadContent.bind(this));
+    }
   }
 
   loadContent(focus = true) {
