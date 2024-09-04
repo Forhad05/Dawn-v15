@@ -60,6 +60,10 @@
   margin-top: 0;
 }
 
+.collapsible-content__description {
+  margin-bottom: 2rem;
+}
+
 @media screen and (min-width: 750px) {
   .collapsible-content__description {
     margin-bottom: 3rem;
