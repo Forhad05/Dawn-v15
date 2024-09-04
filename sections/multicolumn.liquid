@@ -31,11 +31,11 @@
     {% endif %}
   >
     {%- unless section.settings.title == blank -%}
-      <div class="title-wrapper title-wrapper--no-top-margin multicolumn__title">
-        <h2
-          class="title inline-richtext {{ section.settings.heading_size }}"
-          style="text-align: {{ section.settings.heading_alignment }};"
-        >
+      <div
+        class="title-wrapper title-wrapper--no-top-margin multicolumn__title"
+        style="text-align: {{ section.settings.heading_alignment }}"
+      >
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
           {{ section.settings.title }}
         </h2>
       </div>
@@ -200,6 +200,11 @@
       "id": "title",
       "default": "t:sections.multicolumn.settings.title.default",
       "label": "t:sections.multicolumn.settings.title.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
     },
     {
       "type": "select",
