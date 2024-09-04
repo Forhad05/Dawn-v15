@@ -35,6 +35,11 @@
           {%- else -%}
             <h2 class="visually-hidden">{{ 'accessibility.collapsible_content_title' | t }}</h2>
           {% endif %}
+          {% if section.settings.description != blank %}
+            <div class="description rte {{ section.settings.text_style }} collapsible-content__description">
+              {{ section.settings.description }}
+            </div>
+          {% endif %}
         </div>
         <div class="grid grid--1-col grid--2-col-tablet collapsible-content__grid{% if section.settings.desktop_layout == 'image_second' %} collapsible-content__grid--reverse{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {%- if section.settings.image != blank -%}
@@ -125,6 +130,31 @@
       "id": "heading",
       "label": "t:sections.collapsible_content.settings.heading.label",
       "default": "t:sections.collapsible_content.settings.heading.default"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "select",
+      "id": "text_style",
+      "options": [
+        {
+          "value": "body",
+          "label": "t:sections.image-banner.blocks.text.settings.text_style.options__1.label"
+        },
+        {
+          "value": "subtitle",
+          "label": "t:sections.image-banner.blocks.text.settings.text_style.options__2.label"
+        },
+        {
+          "value": "caption-with-letter-spacing",
+          "label": "t:sections.image-banner.blocks.text.settings.text_style.options__3.label"
+        }
+      ],
+      "default": "body",
+      "label": "Description style"
     },
     {
       "type": "select",
