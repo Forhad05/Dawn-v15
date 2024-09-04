@@ -30,16 +30,26 @@
       data-cascade
     {% endif %}
   >
-    {%- unless section.settings.title == blank -%}
+    {%- if section.settings.title != blank or section.settings.description != blank -%}
       <div class="title-wrapper title-wrapper--no-top-margin multicolumn__title">
+        {% if section.settings.title != blank %}
         <h2
           class="title inline-richtext {{ section.settings.heading_size }}"
           style="text-align: {{ section.settings.heading_alignment }};"
         >
           {{ section.settings.title }}
         </h2>
+        {% endif %}
+        {% if section.settings.description != blank %}
+        <div
+          class="description multicolumn__description rte {{ section.settings.text_style }}"
+          style="text-slign: {{ section.settings.description_alignment }}"
+        >
+          {{ section.settings.description }}
+        </div>
+        {% endif %}
       </div>
-    {%- endunless -%}
+      {%- endif -%}
     <slider-component class="slider-mobile-gutter">
       <ul
         class="multicolumn-list contains-content-container grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}"
@@ -233,6 +243,51 @@
       "type": "select",
       "id": "heading_alignment",
       "label": "t:sections.collapsible_content.settings.heading_alignment.label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__3.label"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "select",
+      "id": "text_style",
+      "options": [
+        {
+          "value": "body",
+          "label": "t:sections.image-banner.blocks.text.settings.text_style.options__1.label"
+        },
+        {
+          "value": "subtitle",
+          "label": "t:sections.image-banner.blocks.text.settings.text_style.options__2.label"
+        },
+        {
+          "value": "caption-with-letter-spacing",
+          "label": "t:sections.image-banner.blocks.text.settings.text_style.options__3.label"
+        }
+      ],
+      "default": "body",
+      "label": "t:sections.image-banner.blocks.text.settings.text_style.label"
+    },
+    {
+      "type": "select",
+      "id": "description_alignment",
+      "label": "Description alignment",
       "options": [
         {
           "value": "left",
