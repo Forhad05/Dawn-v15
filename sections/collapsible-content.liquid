@@ -37,7 +37,7 @@
           {% endif %}
         </div>
         {% if section.settings.description != blank %}
-          <div class="description rte {{ section.settings.text_style }} collapsible-content__description">
+          <div class="description rte {{ section.settings.text_style }} collapsible-content__description" style="text-align: {{ section.settings.description_alignment }};">
             {{ section.settings.description }}
           </div>
         {% endif %}
@@ -138,26 +138,6 @@
     },
     {
       "type": "select",
-      "id": "text_style",
-      "options": [
-        {
-          "value": "body",
-          "label": "t:sections.image-banner.blocks.text.settings.text_style.options__1.label"
-        },
-        {
-          "value": "subtitle",
-          "label": "t:sections.image-banner.blocks.text.settings.text_style.options__2.label"
-        },
-        {
-          "value": "caption-with-letter-spacing",
-          "label": "t:sections.image-banner.blocks.text.settings.text_style.options__3.label"
-        }
-      ],
-      "default": "body",
-      "label": "Description style"
-    },
-    {
-      "type": "select",
       "id": "heading_size",
       "options": [
         {
@@ -187,6 +167,46 @@
     {
       "type": "select",
       "id": "heading_alignment",
+      "label": "t:sections.collapsible_content.settings.heading_alignment.label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.collapsible_content.settings.heading_alignment.options__3.label"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_style",
+      "options": [
+        {
+          "value": "body",
+          "label": "t:sections.image-banner.blocks.text.settings.text_style.options__1.label"
+        },
+        {
+          "value": "subtitle",
+          "label": "t:sections.image-banner.blocks.text.settings.text_style.options__2.label"
+        },
+        {
+          "value": "caption-with-letter-spacing",
+          "label": "t:sections.image-banner.blocks.text.settings.text_style.options__3.label"
+        }
+      ],
+      "default": "body",
+      "label": "Description style"
+    },
+    {
+      "type": "select",
+      "id": "description_alignment",
       "label": "t:sections.collapsible_content.settings.heading_alignment.label",
       "options": [
         {
