@@ -144,8 +144,8 @@
                   {%- endif -%}
                   {%- unless placeholder -%}
                     <div {{ block.shopify_attributes }}>
-                      {%- form 'product', product -%}
-                        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                      {%- form 'product', product, data-productid: product.id -%}
+                        <input type="hidden" name="id" data-productid="{{ product.id }}" value="{{ product.selected_or_first_available_variant.id }}">
                         {{ form | payment_terms }}
                       {%- endform -%}
                     </div>
