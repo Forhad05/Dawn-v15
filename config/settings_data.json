@@ -107,10 +107,12 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": true,
-    "cart_type": "page",
+    "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": false,
+    "addon_product": "selling-plans-ski-wax",
     "cart_drawer_collection": "",
+    "add_on_product": "selling-plans-ski-wax",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
