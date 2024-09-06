@@ -234,7 +234,7 @@
 
 {% schema %}
 {
-  "name": "Carousel",
+  "name": "t:sections.carousel.name",
   "class": "section section-carousel",
   "tag": "section",
   "disabled_on": {
@@ -244,7 +244,7 @@
     {
       "type": "inline_richtext",
       "id": "title",
-      "default": "Carousel",
+      "default": "t:sections.carousel.settings.title.default",
       "label": "t:sections.multicolumn.settings.title.label"
     },
     {
@@ -331,7 +331,7 @@
     {
       "type": "checkbox",
       "id": "full_width",
-      "label": "Make section full width",
+      "label": "t:sections.carousel.settings.full_width.label",
       "default": false
     },
     {
@@ -487,7 +487,7 @@
   "blocks": [
     {
       "type": "column",
-      "name": "Card",
+      "name": "t:sections.carousel.blocks.column.name",
       "settings": [
         {
           "type": "image_picker",
@@ -521,7 +521,7 @@
   ],
   "presets": [
     {
-      "name": "Carousel",
+      "name": "t:sections.carousel.presets.name",
       "blocks": [
         {
           "type": "column"

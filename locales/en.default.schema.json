@@ -525,6 +525,25 @@
         "name": "Apps"
       }
     },
+    "carousel": {
+      "name": "Carousel",
+      "settings": {
+        "title": {
+          "default": "Carousel"
+        },
+        "full_width": {
+          "label": "Make section full width"
+        }
+      },
+      "blocks": {
+        "column": {
+          "name": "Card"
+        }
+      },
+      "presets": {
+        "name": "Carousel"
+      }
+    },
     "collage": {
       "name": "Collage",
       "settings": {
