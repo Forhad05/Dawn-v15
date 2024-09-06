@@ -2527,6 +2527,15 @@
           "label": "Heading",
           "default": "Multicolumn"
         },
+        "description": {
+          "label": "Description"
+        },
+        "description_style": {
+          "label": "Description style"
+        },
+        "description_alignment": {
+          "label": "Description alignment"
+        },
         "image_width": {
           "label": "Image width",
           "options__1": {
