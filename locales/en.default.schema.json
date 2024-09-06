@@ -1063,6 +1063,12 @@
         "payment_enable": {
           "label": "Show payment icons"
         },
+        "footer_credits": {
+          "label": "Footer Credits"
+        },
+        "credits_alignment": {
+          "label": "Credits alignment"
+        },
         "header__8": {
           "content": "Policy links",
           "info": "To add store policies, go to your [policy settings](\/admin\/settings\/legal)."
