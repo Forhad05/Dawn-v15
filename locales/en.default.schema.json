@@ -503,6 +503,9 @@
             },
             "link": {
               "label": "Link"
+            },
+            "remove_icon": {
+              "label": "Remove '->' in Text Link"
             }
           }
         }
