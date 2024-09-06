@@ -3027,6 +3027,12 @@
         "enable_video_looping": {
           "label": "Play video on loop"
         },
+        "enable_autoplay": {
+          "label": "Play Automatically"
+        },
+        "disable_controls": {
+          "label": "Hide Controls"
+        },
         "header__1": {
           "content": "Shopify-hosted video"
         },
