@@ -110,7 +110,7 @@
 
 {% schema %}
 {
-  "name": "Recently Viewed",
+  "name": "t:sections.recently-viewed.name",
   "tag": "section",
   "class": "section section--recently-viewed",
   "enabled_on": {
@@ -121,7 +121,7 @@
     {
       "type": "inline_richtext",
       "id": "title",
-      "default": "Recently Viewed",
+      "default": "t:sections.featured-collection.settings.heading.default",
       "label": "t:sections.featured-collection.settings.title.label"
     },
     {
@@ -155,7 +155,7 @@
     {
       "type": "select",
       "id": "heading_alignment",
-      "label": "Heading alignment",
+      "label": "t:sections.collapsible_content.settings.heading_alignment.label",
       "options":[
         {
           "value": "left",
@@ -380,7 +380,7 @@
   ],
   "presets": [
     {
-      "name": "Recently Viewed"
+      "name": "t:sections.recently-viewed.presets.name"
     }
   ]
 }

@@ -3014,6 +3014,17 @@
         "name": "Rich text"
       }
     },
+    "recently-viewed": {
+      "name": "Recently Viewed",
+      "settings": {
+        "heading": {
+          "default": "Recently Viewed"
+        }
+      },
+      "presets": {
+        "name": "Recently Viewed"
+      }
+    },
     "video": {
       "name": "Video",
       "settings": {
