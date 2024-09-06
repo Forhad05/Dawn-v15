@@ -371,6 +371,14 @@
     }
   },
   "sections": {
+    "404": {
+      "name": "Main 404",
+      "settings": {
+        "disable_404_label": {
+          "label": "Hide 404 label"
+        }
+      }
+    },
     "all": {
       "animation": {
         "content": "Animations",
