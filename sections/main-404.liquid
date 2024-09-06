@@ -11,9 +11,11 @@
 </style>
 
 <div class="template-404 page-width page-margin center">
+  {% unless section.settings.disable_404_label %}
   <p>
     {{ 'templates.404.subtext' | t }}
   </p>
+    {% endunless %}
   <h1 class="title">
     {{ 'templates.404.title' | t }}
   </h1>
@@ -21,3 +23,17 @@
     {{ 'general.continue_shopping' | t }}
   </a>
 </div>
+
+{% schema %}
+{
+  "name": "Main 404",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "disable_404_label",
+      "label": "Hide 404 label",
+      "default": false
+    }
+  ]
+}
+{% endschema %}
