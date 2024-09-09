@@ -42,7 +42,7 @@
           {%- endif -%}
           <p class="announcement-bar__message h5">
             <span>{{ section.blocks.first.settings.text | escape }}</span>
-            {%- if block.settings.link != blank and block.settings.remove_icon == false -%}
+            {%- if tion.blocks.first.settings.link != blank and tion.blocks.first.settings.remove_icon == false -%}
               {% render 'icon-arrow' %}
             {%- endif -%}
           </p>
