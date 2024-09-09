@@ -1159,7 +1159,7 @@
           "label": "Show separator line"
         },
         "show_search": {
-          "label": "Display/Hide Search"
+          "label": "Display\/Hide Search"
         },
         "nav_open_toggle": {
           "label": "Desktop Nav replace Hover with Click"
