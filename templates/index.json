@@ -67,16 +67,70 @@
             "color_scheme": ""
           },
           "blocks": {
-            "text_NQYN3d": {
-              "type": "text",
+            "group_rbTM6B": {
+              "type": "group",
               "settings": {
-                "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
-                "alignment": "center"
-              }
+                "color_scheme": ""
+              },
+              "blocks": {
+                "group_9EFNhf": {
+                  "type": "group",
+                  "settings": {
+                    "color_scheme": ""
+                  },
+                  "blocks": {
+                    "group_B6QB79": {
+                      "type": "group",
+                      "settings": {
+                        "color_scheme": ""
+                      },
+                      "blocks": {
+                        "group_rCKJda": {
+                          "type": "group",
+                          "settings": {
+                            "color_scheme": ""
+                          },
+                          "blocks": {
+                            "group_YKWwBT": {
+                              "type": "group",
+                              "settings": {
+                                "color_scheme": ""
+                              },
+                              "blocks": {
+                                "group_HajDWP": {
+                                  "type": "group",
+                                  "settings": {
+                                    "color_scheme": ""
+                                  }
+                                }
+                              },
+                              "block_order": [
+                                "group_HajDWP"
+                              ]
+                            }
+                          },
+                          "block_order": [
+                            "group_YKWwBT"
+                          ]
+                        }
+                      },
+                      "block_order": [
+                        "group_rCKJda"
+                      ]
+                    }
+                  },
+                  "block_order": [
+                    "group_B6QB79"
+                  ]
+                }
+              },
+              "block_order": [
+                "group_9EFNhf"
+              ]
             }
           },
           "block_order": [
-            "text_NQYN3d"
+            "group_rbTM6B"
           ]
         }
       },
