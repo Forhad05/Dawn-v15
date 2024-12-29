@@ -73,10 +73,37 @@
                 "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
                 "alignment": "center"
               }
+            },
+            "group_4LyyFQ": {
+              "type": "group",
+              "settings": {
+                "color_scheme": "scheme-3"
+              },
+              "blocks": {
+                "text_yTWD8x": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h3>Hello, world!</h3>",
+                    "alignment": "left"
+                  }
+                },
+                "text_GWHDpx": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>How's it going?</p>",
+                    "alignment": "left"
+                  }
+                }
+              },
+              "block_order": [
+                "text_yTWD8x",
+                "text_GWHDpx"
+              ]
             }
           },
           "block_order": [
-            "text_NQYN3d"
+            "text_NQYN3d",
+            "group_4LyyFQ"
           ]
         }
       },
