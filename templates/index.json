@@ -103,10 +103,17 @@
                                     "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
                                     "alignment": "left"
                                   }
+                                },
+                                "group_Ni8eJD": {
+                                  "type": "group",
+                                  "settings": {
+                                    "color_scheme": ""
+                                  }
                                 }
                               },
                               "block_order": [
-                                "text_WKUXDE"
+                                "text_WKUXDE",
+                                "group_Ni8eJD"
                               ]
                             }
                           },
