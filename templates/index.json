@@ -97,15 +97,16 @@
                                 "color_scheme": ""
                               },
                               "blocks": {
-                                "group_HajDWP": {
-                                  "type": "group",
+                                "text_WKUXDE": {
+                                  "type": "text",
                                   "settings": {
-                                    "color_scheme": ""
+                                    "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+                                    "alignment": "left"
                                   }
                                 }
                               },
                               "block_order": [
-                                "group_HajDWP"
+                                "text_WKUXDE"
                               ]
                             }
                           },
