@@ -14,7 +14,9 @@
 {%- endstyle -%}
 
 <div class="custom-section section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
-  {% content_for 'blocks' %}
+  <div class="page-width">
+    {% content_for 'blocks' %}
+  </div>
 </div>
 
 {% schema %}
