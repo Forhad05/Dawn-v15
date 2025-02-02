@@ -25,6 +25,8 @@
                 assign input_placeholder = block.settings.input_placeholder | default: input_label
               -%}
     
+              <label for="ContactFormColorPalette-{{ section.id }}-{{ forloop.index }}">Do you have a specific theme or color palette in mind? <span class="small-label">(e.g., Traditional, Modern, Rustic, Minimalist, Whimsical, Winter Wonderland, Glamorous)</span></label>
+              <input type="text" id="ContactFormColorPalette-{{ section.id }}-{{ forloop.index }}" class="input-full" name="contact[color_palette]" autocapitalize="words" placeholder="Write here...">
           {%- endcase -%}
         </li>
       {%- endfor -%}
@@ -49,7 +51,8 @@
           {
             "type": "text",
             "id": "input_placeholder",
-            "label": "Input placeholder"
+            "label": "Input placeholder",
+            "default": "Write here..."
           }
         ]
       },
