@@ -33,7 +33,7 @@
         "input_Yh7dDy": {
           "type": "input",
           "settings": {
-            "input_label": "",
+            "input_label": "What is the date you     would like your Christmas tree to be decorated?",
             "input_placeholder": "Write here..."
           }
         },
