@@ -15,7 +15,12 @@
 
 <div class="section-{{ section.id }}-padding">
   <div class="page-width">
-
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'input' -%}
+          
+        {%- endcase -%}
+    {%- endfor -%}
   </div>
 </div>
 
@@ -27,6 +32,22 @@
       {
         "type": "input",
         "name": "Input",
+        "settings": [
+          {
+            "type": "text",
+            "id": "input_label",
+            "label": "Input label"
+          },
+          {
+            "type": "text",
+            "id": "input_placeholder",
+            "label": "Input placeholder"
+          }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "Textarea",
         "settings": [
           {
             "type": "text",
