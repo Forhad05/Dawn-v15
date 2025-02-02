@@ -15,15 +15,20 @@
 
 <div class="section-{{ section.id }}-padding">
   <div class="page-width">
-    {%- for block in section.blocks -%}
-      {%- case block.type -%}
-        {%- when 'input', 'textarea' -%}
-          {%- liquid
-            assign input_label = block.settings.input_label
-            assign input_placeholder = block.settings.input_placeholder | default: input_label
-          -%}
-        {%- endcase -%}
-    {%- endfor -%}
+    <ol>
+      {%- for block in section.blocks -%}
+        <li>
+          {%- case block.type -%}
+            {%- when 'input', 'textarea' -%}
+              {%- liquid
+                assign input_label = block.settings.input_label
+                assign input_placeholder = block.settings.input_placeholder | default: input_label
+              -%}
+    
+          {%- endcase -%}
+        </li>
+      {%- endfor -%}
+    </ol>
   </div>
 </div>
 
