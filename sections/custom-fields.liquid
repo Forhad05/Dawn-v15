@@ -35,7 +35,7 @@
               -%}
     
               <label for="ContactForm-{{ input_label | handleize }}-{{ section.id }}-{{ forloop.index }}">{{ input_label }}</label>
-              <input type="text" id="ContactForm-{{ input_label | handleize }}-{{ section.id }}-{{ forloop.index }}" class="input-full" name="contact[{{ input_label }}]" autocapitalize="words" placeholder="{{ input_placeholder }}">
+              <textarea rows="5" id="ContactForm-{{ input_label | handleize }}-{{ section.id }}-{{ forloop.index }}" class="input-full" name="contact[{{ input_label }}]" autocapitalize="words" placeholder="{{ input_placeholder }}">
 
           {%- endcase -%}
         </li>
