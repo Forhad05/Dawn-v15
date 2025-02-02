@@ -20,6 +20,7 @@
         {%- when 'input', 'textarea' -%}
           {%- liquid
             assign input_label = block.settings.input_label
+            assign input_placeholder = block.settings.input_placeholder | default: input_label
           -%}
         {%- endcase -%}
     {%- endfor -%}
