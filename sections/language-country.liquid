@@ -1,0 +1,84 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width section-{{ section.id }}-padding">
+  {% comment %}
+    {% assign localization_language_flags = localization.market.metafields.info.language_flags %}
+    <ul>
+      {% for country in localization.available_countries -%}
+        <li>{{ country }}</li>
+        <li>{{ country | image_url: width: 32 | image_tag }}</li>
+        <li>{{ localization.country | image_url: width: 32 | image_tag }}</li>
+      {%- endfor %}
+    </ul>
+  {% endcomment %}
+
+  <ul>
+    <li>{{ localization.country }}</li>
+    {% comment %}
+      {% for country in all_country_option_tags %}
+        <li>{{ country }}</li>
+      {% endfor %}
+    {% endcomment %}
+    {% comment %} <li>{{ all_country_option_tags }}</li> {% endcomment %}
+    <li>{{ metaobjects.language_flags.values }}</li>
+    {% for language_item in metaobjects.language_flags.values %}
+      {% comment %} <li>{{ language_item.language_list.value }}</li> {% endcomment %}
+      {% for language_flags in language_item.language_list.value %}
+        <li>{{ language_flags.language }}</li>
+        <li>{{ language_flags.language_iso_code }}</li>
+        <li>{{ language_flags.country }}</li>
+        <li>{{ language_flags.country_iso_code }}</li>
+      {% endfor %}
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "Language country",
+  "class": "section--language-country",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Language country"
+    }
+  ]
+}
+{% endschema %}
