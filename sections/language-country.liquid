@@ -13,34 +13,8 @@
 {%- endstyle -%}
 
 <div class="page-width section-{{ section.id }}-padding">
-  {% comment %}
-    {% assign localization_language_flags = localization.market.metafields.info.language_flags %}
-    <ul>
-      {% for country in localization.available_countries -%}
-        <li>{{ country }}</li>
-        <li>{{ country | image_url: width: 32 | image_tag }}</li>
-        <li>{{ localization.country | image_url: width: 32 | image_tag }}</li>
-      {%- endfor %}
-    </ul>
-  {% endcomment %}
-
   <ul>
-    <li>{{ localization.country | image_url: width: 32 | image_tag }}</li>
-    {% comment %}
-      {% for country in all_country_option_tags %}
-        <li>{{ country }}</li>
-      {% endfor %}
-    {% endcomment %}
-    {% comment %} <li>{{ all_country_option_tags }}</li> {% endcomment %}
-    <li>{{ all_countries }}</li>
-    {% for country in all_countries %}
-      <li>ISO Code: {{ country.iso_code }}</li>
-      <li>Name: {{ country.name }}</li>
-      <li>Currency: {{ country.currency.iso_code }}</li>
-      <li>Tax Rate: {{ country.tax }}</li>
-    {% endfor %}
     {% for language_item in metaobjects.language_flags.values %}
-      {% comment %} <li>{{ language_item.language_list.value }}</li> {% endcomment %}
       {% for language_flags in language_item.language_list.value %}
         {% assign country_iso_code_downcase = language_flags.country_iso_code | downcase %}
         {% assign country_flag_src = '//cdn.shopify.com/static/images/flags/' | append: country_iso_code_downcase | append: '.svg?width=32' %}
