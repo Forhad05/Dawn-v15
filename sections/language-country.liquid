@@ -33,6 +33,12 @@
     {% endcomment %}
     {% comment %} <li>{{ all_country_option_tags }}</li> {% endcomment %}
     <li>{{ all_countries }}</li>
+    {% for country in all_countries %}
+      ISO Code: {{ country.iso_code }}
+      Name: {{ country.name }}
+      Currency: {{ country.currency.iso_code }}
+      Tax Rate: {{ country.tax }}
+    {% endfor %}
     {% for language_item in metaobjects.language_flags.values %}
       {% comment %} <li>{{ language_item.language_list.value }}</li> {% endcomment %}
       {% for language_flags in language_item.language_list.value %}
