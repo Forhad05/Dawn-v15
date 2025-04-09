@@ -42,12 +42,14 @@
     {% for language_item in metaobjects.language_flags.values %}
       {% comment %} <li>{{ language_item.language_list.value }}</li> {% endcomment %}
       {% for language_flags in language_item.language_list.value %}
+        {% assign country_iso_code_downcase = language_flags.country_iso_code | downcase %}
+        {% assign country_flag_src = '//cdn.shopify.com/static/images/flags/' | append: country_iso_code_downcase | append: '.svg?width=32' %}
         <li>{{ language_flags.language }}</li>
         <li>{{ language_flags.language_iso_code }}</li>
         <li>{{ language_flags.country }}</li>
         <li>{{ language_flags.country_iso_code }}</li>
         <li>
-          <img src="//cdn.shopify.com/static/images/flags/{{ language_flags.country_iso_code | downcase }}.svg?width=32" srcset="//cdn.shopify.com/static/images/flags/{{ language_flags.country_iso_code | downcase }}.svg?width=32 32w" alt="{{ language_flags.country }}" width="32" height="24">  
+          <img src="{{ country_flag_src }}" srcset="{{ country_flag_src }} 32w" alt="{{ language_flags.country }}" width="32" height="24">  
         </li>
       {% endfor %}
     {% endfor %}
