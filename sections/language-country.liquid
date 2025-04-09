@@ -14,7 +14,6 @@
 
 <div class="page-width section-{{ section.id }}-padding">
   <ul>
-    <li>{{ localization.language.iso_code }}</li>
     {% for language_item in metaobjects.language_flags.values %}
       {% for language_flags in language_item.language_list.value %}
         {% assign country_iso_code_downcase = language_flags.country_iso_code | downcase %}
