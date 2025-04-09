@@ -25,7 +25,7 @@
   {% endcomment %}
 
   <ul>
-    <li>{{ localization.country }}</li>
+    <li>{{ localization.country | image_url: width: 32 | image_tag }}</li>
     {% comment %}
       {% for country in all_country_option_tags %}
         <li>{{ country }}</li>
