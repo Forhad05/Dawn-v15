@@ -102,13 +102,15 @@
                                   "settings": {
                                     "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
                                     "alignment": "left"
-                                  }
+                                  },
+                                  "blocks": {}
                                 },
                                 "group_Ni8eJD": {
                                   "type": "group",
                                   "settings": {
                                     "color_scheme": ""
-                                  }
+                                  },
+                                  "blocks": {}
                                 }
                               },
                               "block_order": [
@@ -473,6 +475,98 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "ss_feature_1_fCMGJq": {
+      "type": "ss-feature-1",
+      "blocks": {
+        "image_cYmKGd": {
+          "type": "image",
+          "settings": {
+            "feature_title": "Free Shipping",
+            "feature_text": "<p>Order today, receive tomorrow</p>",
+            "feature_url": "https://section.store/",
+            "hide_image": false
+          }
+        },
+        "image_bbF7nh": {
+          "type": "image",
+          "settings": {
+            "feature_title": "Price-match guarantee",
+            "feature_text": "<p>Safe money when ordering with us</p>",
+            "feature_url": "",
+            "hide_image": false
+          }
+        },
+        "image_hg3Ehf": {
+          "type": "image",
+          "settings": {
+            "feature_title": "Hassle-free exchange",
+            "feature_text": "<p>Receive a slip for exchanges</p>",
+            "feature_url": "",
+            "hide_image": false
+          }
+        },
+        "image_jfYU9Q": {
+          "type": "image",
+          "settings": {
+            "feature_title": "5.0 Google Reviews",
+            "feature_text": "<p>Customer satisfaction #1 priority</p>",
+            "feature_url": "",
+            "hide_image": false
+          }
+        }
+      },
+      "block_order": [
+        "image_cYmKGd",
+        "image_bbF7nh",
+        "image_hg3Ehf",
+        "image_jfYU9Q"
+      ],
+      "name": "SS - Feature #1",
+      "settings": {
+        "feature_row": 4,
+        "feature_row_mobile": 1,
+        "feature_gap": 20,
+        "feature_gap_mobile": 20,
+        "feature_padding_horizontal": 0,
+        "feature_padding_vertical": 0,
+        "feature_radius": 16,
+        "feature_border_thickness": 0,
+        "feature_shadow": false,
+        "feature_heading_custom": false,
+        "feature_heading_font": "josefin_sans_n4",
+        "feature_heading_size": 14,
+        "feature_heading_size_mobile": 12,
+        "feature_heading_height": 130,
+        "feature_heading_mt": 8,
+        "feature_text_custom": false,
+        "feature_text_font": "josefin_sans_n4",
+        "feature_text_size": 12,
+        "feature_text_size_mobile": 12,
+        "feature_text_height": 130,
+        "feature_text_mt": 4,
+        "feature_icon_size": 42,
+        "feature_icon_size_mobile": 42,
+        "feature_bg": "#FFFFFF",
+        "feature_border_color": "#000000",
+        "feature_shadow_color": "#000000",
+        "feature_heading_color": "#000000",
+        "feature_text_color": "#000000",
+        "feature_icon_color": "#000000",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 16,
+        "padding_bottom": 16,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      }
     }
   },
   "order": [
@@ -484,6 +578,7 @@
     "multicolumn_tBiK43",
     "carousel_f4Dq8m",
     "rich_text",
-    "collage"
+    "collage",
+    "ss_feature_1_fCMGJq"
   ]
 }
